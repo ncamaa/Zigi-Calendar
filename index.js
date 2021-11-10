@@ -138,4 +138,5 @@ data = JSON.parse(rawData)
 //end const
 
 //init
-work(data)
+const res = work(data)
+console.log(res)
