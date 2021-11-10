@@ -73,12 +73,14 @@ work = data => {
   
   //loop over all the meetings to determine the rest of the open slots
   allMeetings.forEach(m => {
-    if (m.startTime > pointer) { //meeting starts AFTER last meeting ends
+    if (m.startTime > pointer) { //current meeting starts AFTER last meeting ends
       addSlot(pointer, m.startTime)
+      //move pointer to the current meetings' ending time
       pointer = m.endTime
-    } else { //meeting starts BEFORE last meetings ends
-      pointer = m.endTime
-    }
+    } else { //current meeting starts BEFORE last meetings ends
+      //if current meeting ending time is after the current pointer -> move the pointer
+      if (m.endTime > pointer) pointer = m.endTime 
+    } 
     //determine latest meeting
     if (m.endTime > latestMeetingEndTime) latestMeetingEndTime = m.endTime
   })
@@ -139,4 +141,4 @@ data = JSON.parse(rawData)
 
 //init
 const res = work(data)
-console.log(res)
+console.log(JSON.parse(res))
