@@ -4,7 +4,7 @@ const
 /**
  * Convert a Date string to the standard format
  * 
- * @param {String} dateStr a string in a normal ISO format (Date.toISOString)
+ * @param {String} dateStr - a string in a normal ISO format (Date.toISOString)
  * 
  * @returns the formatted string
  */
@@ -17,8 +17,8 @@ toZigiISO = dateStr => {
 /**
  * Adds a slot to the openSlots array
  * 
- * @param {String} startTime a string in a standard format that represents the starting time of the slot
- * @param {String} endTime   a string in a standard format that represents the ending time of the slot
+ * @param {String} startTime - a string in a standard format that represents the starting time of the slot
+ * @param {String} endTime   - a string in a standard format that represents the ending time of the slot
  * 
  */
 addSlot = (startTime, endTime) => {
@@ -31,7 +31,7 @@ addSlot = (startTime, endTime) => {
 /**
  * Determine the open slots of a day in the calendar according to the provided data.
  * 
- * @param {String} dateStr a string in a normal ISO format (Date.toISOString)
+ * @param {String} dateStr - a string in a normal ISO format (Date.toISOString)
  * 
  * @returns {JSON} an array of available slots for the day || 'all of the day is vacant.' if no meetings are present. 
  */
