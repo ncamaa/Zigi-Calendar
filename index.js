@@ -23,13 +23,6 @@ toZigiISO = dateStr => {
  * 
  */
 addSlot = (startTime, endTime) => {
-
-  onlyHours = str => {
-    return str.substring(11, 16)
-  },
-  startTime = onlyHours(startTime)
-  endTime   = onlyHours(endTime)
-
   const slot = {
     startTime: startTime,
     endTime: endTime,
